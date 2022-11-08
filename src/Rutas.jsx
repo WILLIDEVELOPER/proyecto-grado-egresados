@@ -13,14 +13,14 @@ import AnunciosView from "./Components/SetAnuncios/AnunciosView";
 function Rutas() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/register" element={<Registro />} />
-      <Route path="/personal" element={<Personal />} />
-      <Route path="/laboral" element={<Laboral />} />
-      <Route path="/anunciosview" element={<AnunciosView/>}/>
-      <Route path="/egresados" element={<EgresadosView />} />
-      <Route path="/crearpost" element={<CreatePost/>}/>
-      <Route path="/anuncios" element={<GetAnuncios/>}/>
+      <Route path="proyecto-grado-egresados/" element={<Login />} />
+      <Route path="proyecto-grado-egresados/register" element={<Registro />} />
+      <Route path="proyecto-grado-egresados/personal" element={<Personal />} />
+      <Route path="proyecto-grado-egresados/laboral" element={<Laboral />} />
+      <Route path="proyecto-grado-egresados/anunciosview" element={<AnunciosView/>}/>
+      <Route path="proyecto-grado-egresados/egresados" element={<EgresadosView />} />
+      <Route path="proyecto-grado-egresados/crearpost" element={<CreatePost/>}/>
+      <Route path="proyecto-grado-egresados/anuncios" element={<GetAnuncios/>}/>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
