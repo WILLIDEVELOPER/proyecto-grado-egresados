@@ -80,7 +80,7 @@ function Registro() {
 
             <button
               onClick={() => {
-                navigate("/");
+                navigate("proyecto-grado-egresados/");
               }}
               className="bg-indigo-500 mt-10 w-full px-4 py-2 text-white rounded-md hover:bg-indigo-400"
               type="submit"
