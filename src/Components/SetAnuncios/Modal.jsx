@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 import { AppContext } from "../../Context/AppContext";
 
-function Modal({ id }) {
+function Modal({ id ="" }) {
 
-  const { setShowModal, handleUpdatePost, handlePostChange } = useContext(AppContext);
+  const { setShowModal, handleUpdatePost, handleAnuncioChange } = useContext(AppContext);
 
   return (
     <>
@@ -17,7 +17,7 @@ function Modal({ id }) {
               <textarea
                 type="text"
                 name="comentario"
-                onChange={handlePostChange}
+                onChange={handleAnuncioChange}
                 className="block px-0 w-full h-[125px] text-sm text-gray-800 bg-white  focus:ring-0 dark:placeholder-gray-400"
                 placeholder="Escribe un comentario sobre el anuncio aqui"
               ></textarea>

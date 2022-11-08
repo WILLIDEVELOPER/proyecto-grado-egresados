@@ -4,7 +4,7 @@ import Navbar from "../Navigation/Navbar";
 
 function InfoEgresados() {
 
-  const {handleSubmitUpdate, handleChange} = useContext(AppContext);
+  const {handleSubmitUpdate, handleUpdateUserChange} = useContext(AppContext);
 
 
 
@@ -38,7 +38,7 @@ function InfoEgresados() {
                           name="nombre"
                           id="nombre"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                         />
                       </div>
 
@@ -51,7 +51,7 @@ function InfoEgresados() {
                           name="apellido"
                           id="apellido"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                         />
                       </div>
 
@@ -64,7 +64,7 @@ function InfoEgresados() {
                           name="correo"
                           id="correo"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                         />
                       </div>
 
@@ -76,7 +76,7 @@ function InfoEgresados() {
                           id="genero"
                           name="genero"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                         >
                           <option value="masculino">Masculino</option>
                           <option value="femenino">Femenino</option>
@@ -93,7 +93,7 @@ function InfoEgresados() {
                           name="cedula"
                           id="cedula"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                         />
                       </div>
 
@@ -106,7 +106,7 @@ function InfoEgresados() {
                           name="celular"
                           id="celular"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                         />
                       </div>
                     </div>

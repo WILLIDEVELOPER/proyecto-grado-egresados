@@ -24,7 +24,6 @@ function CreatePost() {
                 <input
                   type="text"
                   id="titulo"
-                  value={post.titulo}
                   name="titulo"
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   placeholder="Estudia Ingenieria de Sistemas"
@@ -41,7 +40,6 @@ function CreatePost() {
                 <textarea
                   type="text"
                   id="descripcion"
-                  value={post.descripcion}
                   name="descripcion"
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   placeholder="Descripcion breve del anuncio"
@@ -59,7 +57,6 @@ function CreatePost() {
                   type="text"
                   id="carrera_vinculada"
                   name="carrera_vinculada"
-                  value={post.carrera_vinculada}
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   placeholder="Ingenieria sistemas, Psicologia, etc"
                   onChange={handlePostChange}
@@ -77,7 +74,6 @@ function CreatePost() {
                     className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     id="referencia"
                     name="referencia"
-                    value={post.referencia}
                     type="text"
                     placeholder="https://...."
                     onChange={handlePostChange}
@@ -97,7 +93,6 @@ function CreatePost() {
                     placeholder="evento/noticia/curso/oferta empleo"
                   /> */}
                   <select name="tipo_anuncio"
-                  value={post.tipo_anuncio}
                     className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                     id="tipo_anuncio" onChange={handlePostChange}
                   >

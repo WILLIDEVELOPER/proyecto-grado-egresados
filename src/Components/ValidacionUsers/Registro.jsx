@@ -1,12 +1,11 @@
 import { React, useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { AppContext } from "../../Context/AppContext";
 // import {Button,Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 function Registro() {
-  const navigate = useNavigate();
 
-  const { handleChange, handleSubmit } = useContext(AppContext);
+  const {user, handleChange, handleSubmit } = useContext(AppContext);
 
   return (
     <main className="h-screen flex items-center justify-center">
@@ -27,16 +26,17 @@ function Registro() {
               name="nombre"
               required
               id="nombre"
+              value={user.nombre}
               placeholder="Nombre"
               className="bg-slate-300 p-3 w-full mb-7 rounded-md placeholder:font-bold placeholder:text-slate-700"
               autoFocus
               onChange={handleChange}
-              
             />
             <input
               type="text"
               required
               name="apellido"
+              value={user.apellido}
               id="apellido"
               placeholder="Apellido"
               className="bg-slate-300 p-3 w-full mb-7 rounded-md placeholder:font-bold placeholder:text-slate-700"
@@ -48,6 +48,7 @@ function Registro() {
               type="text"
               required
               id="cedula"
+              value={user.cedula}
               name="cedula"
               placeholder="Cedula"
               className="bg-slate-300 p-3 w-full mb-7 rounded-md placeholder:font-bold placeholder:text-slate-700"
@@ -59,6 +60,7 @@ function Registro() {
               type="text"
               required
               id="correo"
+              value={user.correo}
               name="correo"
               placeholder="Correo"
               className="bg-slate-300 p-3 w-full mb-7 rounded-md placeholder:font-bold placeholder:text-slate-700"
@@ -79,9 +81,6 @@ function Registro() {
             </div> */}
 
             <button
-              onClick={() => {
-                navigate("/");
-              }}
               className="bg-indigo-500 mt-10 w-full px-4 py-2 text-white rounded-md hover:bg-indigo-400"
               type="submit"
             >

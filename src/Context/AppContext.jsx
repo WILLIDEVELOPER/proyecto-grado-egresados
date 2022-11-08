@@ -6,6 +6,17 @@ export function AppContextProvider(props) {
   //VARIABLES
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState({
+    nombre: "",
+    apellido: "",
+    cedula: "",
+    genero: "",
+    celular: "",
+    correo: "",
+    situacion: "",
+    nombre_empresa: "",
+    sector: ""
+  });
+  const [updateUser, setUpdateUser] = useState({
     nombre: null,
     apellido: null,
     cedula: null,
@@ -14,17 +25,25 @@ export function AppContextProvider(props) {
     correo: null,
     situacion: null,
     nombre_empresa: null,
-    sector: null,
+    sector: null
   });
   const [listUpdated, setListUpdated] = useState(false);
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({
+    titulo: "",
+    descripcion: "",
+    carrera_vinculada: "",
+    tipo_anuncio: "",
+    comentario: "",
+    referencia: ""
+  });
+  const [anuncioUpdate, setAnuncioUpdate] = useState({
     titulo: null,
     descripcion: null,
     carrera_vinculada: null,
     tipo_anuncio: null,
     comentario: null,
-    referencia: null,
+    referencia: null
   });
   const inputFileRef = useRef()
   const [file, setFile] = useState(null)
@@ -53,7 +72,8 @@ export function AppContextProvider(props) {
         "https://rest-api-proyecto-grado-production.up.railway.app/api/usuarios"
       )
         .then((res) => res.json())
-        .then((res) => setUsers(res));
+        .then((res) => setUsers(res))
+        .catch((err) => console.log(err));
     };
     // const getValidate = () => {
     //   setValidate(users.filter(user => user.cedula === username && user.cedula === password));
@@ -94,34 +114,30 @@ export function AppContextProvider(props) {
   };
 
   //CREATE USER
-  const handleChange = (e) => {
+  const handleChange = e => {
     setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
-  };
+        ...user,
+        [e.target.name]: e.target.value
+    })
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+const handleUpdateUserChange = e => {
+  setUpdateUser({
+      ...updateUser,
+      [e.target.name]: e.target.value
+  })
+}
 
+  const handleSubmit = () => {
     //consulta
     const requestInit = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
-    };
-    fetch(
-      "https://rest-api-proyecto-grado-production.up.railway.app/api/crearUsuario",
-      requestInit
-    )
-      .then((res) => res.text())
-      .then((res) => setUser(res));
-
-    //reiniciando state de libro
-    document.getElementById("nombre").value = "";
-    document.getElementById("apellido").value = "";
-    document.getElementById("cedula").value = "";
-    document.getElementById("correo").value = "";
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(user)
+    }
+    fetch('https://rest-api-proyecto-grado-production.up.railway.app/api/crearUsuario', requestInit)
+    .then(res => res.text())
+    .then(res => console.log(res));
   };
 
   const handleUpdateUser = () => {
@@ -129,7 +145,7 @@ export function AppContextProvider(props) {
     const requestInit = {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(user),
+      body: JSON.stringify(updateUser),
     };
     fetch(
       "https://rest-api-proyecto-grado-production.up.railway.app/api/actualizarUsuario/" +
@@ -168,6 +184,13 @@ export function AppContextProvider(props) {
       [e.target.name]: e.target.value,
     });
     console.log(post);
+  };
+
+  const handleAnuncioChange = (e) => {
+    setAnuncioUpdate({
+      ...anuncioUpdate,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handlePostSubmit = (e) => {
@@ -218,7 +241,7 @@ export function AppContextProvider(props) {
     const requestInit = {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(post),
+      body: JSON.stringify(anuncioUpdate),
     };
     fetch(
       "https://rest-api-proyecto-grado-production.up.railway.app/api/actualizarPost/" +
@@ -238,6 +261,7 @@ export function AppContextProvider(props) {
       value={{
         users,
         user,
+        handleUpdateUserChange,
         handleDelete,
         handleChange,
         handleSubmit,
@@ -255,6 +279,7 @@ export function AppContextProvider(props) {
         setShowModal,
         showModal,
         handleUpdatePost,
+        handleAnuncioChange,
       }}
     >
       {props.children}

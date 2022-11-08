@@ -4,7 +4,7 @@ import { AppContext } from "../../Context/AppContext";
 
 function Laboral() {
 
-  const {handleSubmitUpdate, handleChange} = useContext(AppContext);
+  const {handleSubmitUpdate, handleUpdateUserChange} = useContext(AppContext);
 
   return (
     <>
@@ -32,7 +32,7 @@ function Laboral() {
                           Situacion
                         </label>
                         <select
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                           id="situacion"
                           name="situacion"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -50,7 +50,7 @@ function Laboral() {
                         <input
                           type="text"
                           name="nombre_empresa"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                           id="nombre_empresa"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         />
@@ -63,7 +63,7 @@ function Laboral() {
                         <input
                           type="text"
                           name="sector"
-                          onChange={handleChange}
+                          onChange={handleUpdateUserChange}
                           id="sector"
                           className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                         />
