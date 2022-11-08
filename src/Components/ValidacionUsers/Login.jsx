@@ -12,15 +12,15 @@ function Login() {
     e.preventDefault();
     if (validar != null) {
       alert("Bienvenido Egresado")
-      navigate("proyecto-grado-egresados/anuncios");
+      navigate("/anuncios");
     }
     if (validar == null) {
       if (username === "admin" && password === "admin") {
         alert("Bienvenido ADMIN")
-        navigate("proyecto-grado-egresados/egresados");
+        navigate("/egresados");
       }else{
         alert("Digite bien sus credenciales, Puede crearse una cuenta si no la tiene");
-        navigate("proyecto-grado-egresados/");
+        navigate("/");
       }
     }
   };

@@ -20,20 +20,20 @@ function Dashboard() {
           <nav className="mt-10">
             <NavLink
               className="flex items-center px-6 py-2 mt-4 text-gray-500  focus:text-green-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-              to="proyecto-grado-egresados/egresados"
+              to="/egresados"
             >
               <span className="mx-3">Egresados</span>
             </NavLink>
 
             <NavLink
-              to="proyecto-grado-egresados/anunciosview"
+              to="/anunciosview"
               className="flex items-center px-6 py-2 mt-4 text-gray-500 focus:text-green-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
             >
               <span className="mx-3">Anuncios</span>
             </NavLink>
 
             <NavLink
-              to="proyecto-grado-egresados/crearpost"
+              to="/crearpost"
               className="flex items-center px-6 py-2 mt-4 text-gray-500 focus:text-green-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
             >
               <span className="mx-3">Crear Post</span>
@@ -41,7 +41,7 @@ function Dashboard() {
 
             <NavLink
               className="flex items-center px-6 py-2 mt-4 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
-              to="proyecto-grado-egresados/"
+              to="/"
             >
               <span className="mx-3">Cerrar Sesion</span>
             </NavLink>
